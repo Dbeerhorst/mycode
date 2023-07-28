@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <!-- Add new tasks yonder -->
+    <form method="POST">
+        <input type="text" name="task" placeholder="New task description">
+        <button type="submit">Add Task</button>
+    </form>
+    <!-- Table to display the list of tasks -->
+    <table>
+        <tr>
+            <th>Task Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Loop through the tasks and display them in rows of the table -->
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task['description'] }}</td>
+            <td>{{ task['status'] }}</td>
+            <td>
+                <!-- Show 'Complete' link only for 'Incomplete' tasks -->
+                {% if task['status'] == 'Incomplete' %}
+                <a href="/complete/{{tasks.index(task)}}">Complete</a>
+                {% endif %}
+                <!-- Always show 'Delete' link for each task -->
+                <a href="/complete/{{tasks.index(task)}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
