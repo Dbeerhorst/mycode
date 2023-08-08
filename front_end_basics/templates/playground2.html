@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Little Webpage</title>
+        <style>
+            body {
+                background-color: lightgray;
+                color: white;
+            }
+            
+            .moving-text {
+                animation: moveText 4s infinite;
+            }
+            
+            @keyframes moveText {
+                0% { transform: translateX(0); }
+                50% { transform: translateX(150px); }
+                100% { transform: translateX(0); }
+            }
+            
+            a {
+                color: red;
+            }
+        </style>
+        <script>
+            const refreshPage = () => location.reload();
+        </script>
+    </head>
+    <body>
+         <div>
+             <p>I don't know</p>
+             <p>If this will</p>
+             <p>Work well or not</p>
+         </div>
+         
+         <p class="moving-text">Can't touch this</p>
+
+         <ol> 
+              <li>Shrek 1</li>
+              <li>Shrek 2</li>
+              <li>Shrek on Ice</li>
+         </ol>
+        
+         <a href="https://alta3.com/">Visit Alta3 Research</a>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hnql4vU28Ns" frameborder="0" allowfullscreen></iframe>
+        
+        <button onclick="refreshPage()" style="color: white; background-color:grey">See Changes</button>
+    </body>
+</html>
+
